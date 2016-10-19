@@ -32,4 +32,11 @@ public class PlayerController : MonoBehaviour
 		moveDirection.y -= gravity * Time.deltaTime;
 		cc.Move(moveDirection * Time.deltaTime);
 	}
+
+	void OnTriggerEnter(Collider other) 
+	{
+		if (other.gameObject.CompareTag ("Money")) {
+			other.gameObject.SetActive (false);
+		}
+	}
 }
