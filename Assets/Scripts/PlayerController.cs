@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour
@@ -6,13 +7,17 @@ public class PlayerController : MonoBehaviour
 	public float speed = 6.0F;
 	public float jumpSpeed = 8.0F;
 	public float gravity = 20.0F;
-	private Vector3 moveDirection = Vector3.zero;
+	public Text goldCountText;
 
+	private Vector3 moveDirection = Vector3.zero;
 	private CharacterController cc;
+	private int goldCount;
 
 	void Start ()
 	{
 		cc = GetComponent<CharacterController>();
+		goldCount = 0;
+		SetGoldCountText ();
 	}
 
 	void FixedUpdate ()
@@ -37,6 +42,13 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag ("Money")) {
 			other.gameObject.SetActive (false);
+			goldCount++;
+			SetGoldCountText ();
 		}
+	}
+
+	void SetGoldCountText ()
+	{
+		goldCountText.text = "Gold: " + goldCount.ToString ();
 	}
 }
