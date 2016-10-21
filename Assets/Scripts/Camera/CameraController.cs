@@ -3,17 +3,17 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
-	public GameObject player;
+	public Transform target;
 
 	private Vector3 offset;
 
 	void Start ()
 	{
-		offset = transform.position - player.transform.position;
+		offset = transform.position - target.position;
 	}
 
 	void LateUpdate ()
 	{
-		transform.position = player.transform.position + offset;
+		transform.position = target.position + offset;
 	}
 }
