@@ -4,16 +4,18 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
 	public float speed = 6f;
+	public float jumpSpeed = 8.0F;
+	public float gravity = 20.0F;
 
-	Vector3 movement;
-	Rigidbody rb;
-	float cameraRayLength = 100;
-	int floorMask;
+	private Vector3 moveDirection = Vector3.zero;
+	private CharacterController cc;
+	private float cameraRayLength = 100;
+	private int floorMask;
 
 	void Awake()
 	{
 		floorMask = LayerMask.GetMask ("Floor");
-		rb = GetComponent<Rigidbody> ();
+		cc = GetComponent<CharacterController> ();
 	}
 
 	void FixedUpdate()
@@ -27,10 +29,18 @@ public class PlayerMovement : MonoBehaviour
 
 	void Move(float horizontal, float vertical)
 	{
-		movement.Set (horizontal, 0f, vertical);
-		movement = movement * speed * Time.deltaTime;
+		if (cc.isGrounded) {
+			moveDirection = new Vector3(horizontal, 0, vertical);
+			moveDirection = transform.TransformDirection(moveDirection);
+			moveDirection *= speed;
 
-		rb.MovePosition (transform.position + movement);
+			if (Input.GetButton ("Jump")) {
+				moveDirection.y = jumpSpeed;
+			}
+		}
+
+		moveDirection.y -= gravity * Time.deltaTime;
+		cc.Move(moveDirection * Time.deltaTime);
 	}
 
 	void Turning()
@@ -43,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 			playerToMouse.y = 0f;
 
 			Quaternion newRotation = Quaternion.LookRotation (playerToMouse);
-			rb.MoveRotation (newRotation);
+			transform.rotation = newRotation;
 		}
 	}
 }
