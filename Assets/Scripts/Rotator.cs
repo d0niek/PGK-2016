@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Rotator : MonoBehaviour
 {
-	void Update () 
+	void Update ()
 	{
-		transform.Rotate (new Vector3(0, 0, 100) * Time.deltaTime);
+		transform.Rotate (new Vector3 (0, 0, 100) * Time.deltaTime);
 	}
 }

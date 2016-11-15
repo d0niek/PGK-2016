@@ -4,13 +4,13 @@ using System.Collections;
 public class EnemyAttack : MonoBehaviour
 {
 	public float timeBetweenAttacks = 0.5f;
-	public int attackDamage = 10;           
+	public int attackDamage = 10;
 
-	GameObject player;                       
-	PlayerHealth playerHealth;              
-	//EnemyHealth enemyHealth;                
-	bool playerInRange;                     
-	float timer;                              
+	GameObject player;
+	PlayerHealth playerHealth;
+	//EnemyHealth enemyHealth;
+	bool playerInRange;
+	float timer;
 
 	void Awake ()
 	{
@@ -18,17 +18,17 @@ public class EnemyAttack : MonoBehaviour
 		playerHealth = player.GetComponent <PlayerHealth> ();
 		//enemyHealth = GetComponent<EnemyHealth>();
 	}
-		
+
 	void OnTriggerEnter (Collider other)
 	{
-		if(other.gameObject == player) {
+		if (other.gameObject == player) {
 			playerInRange = true;
 		}
 	}
 
 	void OnTriggerExit (Collider other)
 	{
-		if(other.gameObject == player) {
+		if (other.gameObject == player) {
 			playerInRange = false;
 		}
 	}
@@ -37,8 +37,7 @@ public class EnemyAttack : MonoBehaviour
 	{
 		timer += Time.deltaTime;
 
-		// If the timer exceeds the time between attacks, the player is in range and this enemy is alive...
-		if(timer >= timeBetweenAttacks && playerInRange /*&& enemyHealth.currentHealth > 0*/) {
+		if (timer >= timeBetweenAttacks && playerInRange /*&& enemyHealth.currentHealth > 0*/) {
 			Attack ();
 		}
 	}
@@ -47,7 +46,7 @@ public class EnemyAttack : MonoBehaviour
 	{
 		timer = 0f;
 
-		if(playerHealth.currentHealth > 0) {
+		if (playerHealth.currentHealth > 0) {
 			playerHealth.TakeDamage (attackDamage);
 		}
 	}

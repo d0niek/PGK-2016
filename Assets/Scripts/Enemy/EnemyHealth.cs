@@ -2,21 +2,17 @@
 
 public class EnemyHealth : MonoBehaviour
 {
-	public int startingHealth = 100;          
-	public int currentHealth;                        
-	public int scoreValue = 10;         
+	public int startingHealth = 100;
+	public int currentHealth;
+	public int scoreValue = 10;
 
-	CapsuleCollider capsuleCollider;        
-	bool isDead;                                                 
+	CapsuleCollider capsuleCollider;
+	bool isDead;
 
 	void Awake ()
 	{
 		capsuleCollider = GetComponent <CapsuleCollider> ();
 		currentHealth = startingHealth;
-	}
-
-	void Update ()
-	{
 	}
 
 	public void TakeDamage (int amount, Vector3 hitPoint)
@@ -31,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
 			Death ();
 		}
 	}
-		
+
 	void Death ()
 	{
 		isDead = true;

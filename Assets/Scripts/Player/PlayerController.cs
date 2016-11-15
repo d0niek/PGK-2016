@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
 
 	private int goldCount;
 
-	void Awake()
+	void Awake ()
 	{
 		goldCount = 0;
 		SetGoldCountText ();
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter (Collider other)
 	{
 		if (other.gameObject.CompareTag ("Money")) {
 			other.gameObject.SetActive (false);
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	void SetGoldCountText()
+	void SetGoldCountText ()
 	{
 		goldCountText.text = "Gold: " + goldCount.ToString ();
 	}

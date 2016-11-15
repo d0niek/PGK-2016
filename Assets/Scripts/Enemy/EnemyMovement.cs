@@ -5,8 +5,7 @@ public class EnemyMovement : MonoBehaviour
 {
 	public float range = 10.0f;
 
-	float eps = 0.000001f;
-	GameObject player;   
+	GameObject player;
 	PlayerHealth playerHealth;
 	NavMeshAgent navMeshAgent;
 	Vector3 startPosition;
@@ -28,11 +27,10 @@ public class EnemyMovement : MonoBehaviour
 		}
 	}
 
-	bool InRange()
+	bool InRange ()
 	{
 		float distance = Vector3.Distance (transform.position, player.transform.position);
 		distance = Mathf.Abs (distance);
-		print (distance);
 
 		return distance <= range;
 	}
