@@ -3,7 +3,8 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
-	public float range = 10.0f;
+	public float hearingRange = 10.0f;
+	public GameObject hearingRangeCircle;
 
 	GameObject player;
 	PlayerHealth playerHealth;
@@ -16,22 +17,23 @@ public class EnemyMovement : MonoBehaviour
 		playerHealth = player.GetComponent <PlayerHealth> ();
 		navMeshAgent = GetComponent<NavMeshAgent> ();
 		startPosition = transform.position;
+		hearingRangeCircle.transform.localScale = new Vector3 (2 * hearingRange, 0.0001f, 2 * hearingRange);
 	}
 
 	void Update ()
 	{
-		if (InRange () && playerHealth.currentHealth > 0) {
+		if (InHearingRange () && playerHealth.currentHealth > 0) {
 			navMeshAgent.SetDestination (player.transform.position);
 		} else if (startPosition != transform.position) {
 			navMeshAgent.SetDestination (startPosition);
 		}
 	}
 
-	bool InRange ()
+	bool InHearingRange ()
 	{
 		float distance = Vector3.Distance (transform.position, player.transform.position);
 		distance = Mathf.Abs (distance);
 
-		return distance <= range;
+		return distance <= hearingRange;
 	}
 }
