@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Money
+  - Box
+  - Enemy
+  - Coworker
   layers:
   - Default
   - TransparentFX
