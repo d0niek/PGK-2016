@@ -8,9 +8,11 @@ public class CoworkerMovement : MonoBehaviour
     bool shouldStop;
     ParticleSystem exp;
     Vector3 vec;
-    
-	void Start ()
+    Renderer[] childrenRenderer;
+
+    void Start ()
     {
+        childrenRenderer = gameObject.GetComponentsInChildren<MeshRenderer>();
         vec = new Vector3(0, 0, -3);
         player = GameObject.FindGameObjectWithTag ("Player").transform;
         nav = GetComponent<NavMeshAgent> ();
@@ -37,18 +39,19 @@ public class CoworkerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G))
             StartCoroutine(appearAgain());
-            //explodeAndWarpToPlayer();
     }
 
     IEnumerator appearAgain()
     {
         exp.Play();
-        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        foreach (MeshRenderer abc in childrenRenderer)
+            abc.enabled = false;
 
         yield return new WaitForSeconds(1);
 
         nav.Warp(player.position + vec);
-        gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
+        foreach (MeshRenderer abc in childrenRenderer)
+            abc.enabled = true;
 
         shouldStop = false;
     }
