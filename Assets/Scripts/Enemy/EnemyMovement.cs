@@ -12,7 +12,6 @@ public class EnemyMovement : MonoBehaviour
 	PlayerHealth playerHealth;
 	NavMeshAgent navMeshAgent;
 	Vector3 startPosition;
-	bool PlayerInRange;
 
 	void Start ()
 	{
@@ -21,7 +20,6 @@ public class EnemyMovement : MonoBehaviour
 		navMeshAgent = GetComponent<NavMeshAgent> ();
 		startPosition = transform.position;
 		hearingRangeCircle.transform.localScale = new Vector3 (2 * hearingRange, 0.0001f, 2 * hearingRange);
-		PlayerInRange = false;
 	}
 
 	void Update ()
@@ -32,13 +30,6 @@ public class EnemyMovement : MonoBehaviour
 			navMeshAgent.SetDestination (startPosition);
 		}
 	}
-
-//	void FixedUpdate ()
-//	{
-//		bool inView = InViewRange ();
-//		Debug.Log ("In view range " + inView);
-//		PlayerInRange = InHearingRange () || InViewRange ();
-//	}
 
 	bool InHearingRange ()
 	{

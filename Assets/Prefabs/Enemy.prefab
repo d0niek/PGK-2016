@@ -121,7 +121,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b0b1016dac359ff4b866838a1bf823fd, type: 2}
+  - {fileID: 2100000, guid: af9579ff69fc1ac4ebc18945f7ba86ab, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -150,7 +150,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4ebd8f53076cbfb42abb4c68bd32b04c, type: 2}
+  - {fileID: 2100000, guid: 796f061c3ccdebc43aacbe6919f7c2a2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -203,13 +203,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000012165846286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dff33229ad17bb468fba7734554293b, type: 3}
+  m_Script: {fileID: 11500000, guid: f56e1d29f6398f54288906b97f1c3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearingRange: 5
-  hearingRangeCircle: {fileID: 1000010883943618}
-  viewDistance: 10
-  viewAngle: 30
+  timeBetweenAttacks: 0.5
+  attackDamage: 10
 --- !u!114 &114000011201275450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,11 +216,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000012165846286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c18b41bff086c41860aee3cbd2706d, type: 3}
+  m_Script: {fileID: 11500000, guid: aef074870a198a449bb2197240546923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 0.5
-  attackDamage: 10
+  startingHealth: 100
+  currentHealth: 0
+  scoreValue: 10
 --- !u!114 &114000012985023628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,12 +230,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000012165846286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a82200b19193ad4bb819edc1bbf11cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d566a4ac99d13c4fabc40c7d3ed4f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: 0
-  scoreValue: 10
+  hearingRange: 5
+  hearingRangeCircle: {fileID: 1000010883943618}
+  viewDistance: 10
+  viewAngle: 30
 --- !u!135 &135000010352258646
 SphereCollider:
   m_ObjectHideFlags: 1
