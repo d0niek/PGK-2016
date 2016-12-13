@@ -46,7 +46,6 @@ public class EnemyMovement : MonoBehaviour
 
 		if (Vector3.Angle (transform.forward, rayDirection) < viewAngle / 2) {
 			if (Physics.Raycast (transform.position + transform.forward, rayDirection, out hit, viewDistance)) {
-				Debug.Log (hit.transform.name + ", " + hit.transform.tag);
 				return hit.transform.tag == "Player";
 			}
 		}
