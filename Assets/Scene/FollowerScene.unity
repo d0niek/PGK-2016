@@ -79,17 +79,17 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: 0.5
-    agentHeight: 2
+    agentRadius: 0.55
+    agentHeight: 8
     agentSlope: 45
-    agentClimb: 2
-    ledgeDropHeight: 0
+    agentClimb: 8
+    ledgeDropHeight: 2
     maxJumpAcrossDistance: 2
-    accuratePlacement: 1
+    accuratePlacement: 0
     minRegionArea: 2
-    cellSize: 0.16666667
+    cellSize: 0.18333334
     manualCellSize: 0
-  m_NavMeshData: {fileID: 23800000, guid: d389284ff217a284e8e0cdb5e302c4ba, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 038dbf2a2cda6164bb8c38302f6ee298, type: 2}
 --- !u!1001 &8530675
 Prefab:
   m_ObjectHideFlags: 0
@@ -393,8 +393,8 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 123250982}
   m_Enabled: 1
-  m_Radius: 0.53
-  m_Speed: 3.5
+  m_Radius: 1.1
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -402,7 +402,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 2.36
   m_BaseOffset: 2.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -1142,7 +1142,7 @@ GameObject:
   - 4: {fileID: 419804918}
   - 198: {fileID: 419804920}
   - 199: {fileID: 419804919}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1259,7 +1259,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: -1716300547
+  randomSeed: 414516478
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -4912,6 +4912,18 @@ Prefab:
     - target: {fileID: 4000011730360092, guid: e95b6856c03bab148b858ce18db09653, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012934842280, guid: e95b6856c03bab148b858ce18db09653, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012934842280, guid: e95b6856c03bab148b858ce18db09653, type: 2}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010216012826, guid: e95b6856c03bab148b858ce18db09653, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e95b6856c03bab148b858ce18db09653, type: 2}
