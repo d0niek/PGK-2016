@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Money
-  - Fire
-  - Explosion
-  - Box
-  - Plate
-  - Coworker
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -20,8 +14,8 @@ TagManager:
   - 
   - 
   - Floor
-  - Coworker
-  - Player
+  - 
+  - 
   - 
   - 
   - 

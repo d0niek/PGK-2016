@@ -2104,15 +2104,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010608612070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10bf021dc5cfbc947b8dd8975bd05d66, type: 3}
+  m_Script: {fileID: 11500000, guid: 5aab3f8e8b88930469c18f8d1bf1a1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  nav: {fileID: 0}
-  shouldStop: 0
-  exp: {fileID: 0}
-  vec: {x: 0, y: 0, z: 0}
-  childrenRenderer: []
 --- !u!136 &136000013897833316
 CapsuleCollider:
   m_ObjectHideFlags: 1

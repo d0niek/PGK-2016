@@ -13,14 +13,14 @@ public class PlayerMovement : MonoBehaviour
 	private int floorMask;
     Animator anim;
 
-	void Awake()
+	void Awake ()
 	{
         anim = GetComponentInChildren<Animator>();
 		floorMask = LayerMask.GetMask ("Floor");
 		cc = GetComponent<CharacterController> ();
 	}
 
-	void FixedUpdate()
+	void FixedUpdate ()
 	{
 		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
 		float moveVertical = Input.GetAxisRaw ("Vertical");
@@ -38,11 +38,11 @@ public class PlayerMovement : MonoBehaviour
 		Turning ();
 	}
 
-	void Move(float horizontal, float vertical)
+	void Move (float horizontal, float vertical)
 	{
 		if (cc.isGrounded) {
-			moveDirection = new Vector3(horizontal, 0, vertical);
-			moveDirection = transform.TransformDirection(moveDirection);
+			moveDirection = new Vector3 (horizontal, 0, vertical);
+			moveDirection = transform.TransformDirection (moveDirection);
 			moveDirection *= speed;
 
 			if (Input.GetButton ("Jump")) {
@@ -51,10 +51,10 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 		moveDirection.y -= gravity * Time.deltaTime;
-		cc.Move(moveDirection * Time.deltaTime);
+		cc.Move (moveDirection * Time.deltaTime);
 	}
 
-	void Turning()
+	void Turning ()
 	{
 		Ray cameraRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 		RaycastHit floorHit;

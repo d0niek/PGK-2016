@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CoworkerMovement : MonoBehaviour
+public class FollowerMovement : MonoBehaviour
 {
     Transform player;
     NavMeshAgent nav;

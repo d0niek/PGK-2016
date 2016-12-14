@@ -491,6 +491,7 @@ GameObject:
   - 114: {fileID: 114000013883738062}
   - 114: {fileID: 114000012045224252}
   - 143: {fileID: 143000013001259976}
+  - 114: {fileID: 114000013219824356}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1187,10 +1188,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013807493578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02c6224a010caaa469f569a7b329023f, type: 3}
+  m_Script: {fileID: 11500000, guid: 321b173ad790911488c0166722b6b0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldCountText: {fileID: 0}
+  startingHealth: 100
+  currentHealth: 0
+  healthSlider: {fileID: 0}
+  damageImage: {fileID: 0}
+  flashSpeed: 5
+  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+--- !u!114 &114000013219824356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013807493578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee94739bf36897643aecc5029c8082a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  jumpSpeed: 8
+  gravity: 20
 --- !u!114 &114000013883738062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1199,12 +1219,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013807493578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e1ff367ccf1347449f20e8246f75075, type: 3}
+  m_Script: {fileID: 11500000, guid: ea7a0f72a87a2f64fa5020b66023df3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  jumpSpeed: 8
-  gravity: 20
+  goldCountText: {fileID: 0}
 --- !u!137 &137000010858417810
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
