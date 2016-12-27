@@ -28,23 +28,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000010883943618
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000010976079034}
-  - 33: {fileID: 33000013332737210}
-  - 23: {fileID: 23000010129964922}
-  m_Layer: 0
-  m_Name: Hearing Range
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1000012165846286
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +44,7 @@ GameObject:
   - 114: {fileID: 114000011201275450}
   - 114: {fileID: 114000012985023628}
   - 114: {fileID: 114000013102779252}
+  - 114: {fileID: 114000011493733672}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -85,6 +69,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000014245150198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011209395034}
+  - 33: {fileID: 33000012405935796}
+  - 23: {fileID: 23000010027087132}
+  m_Layer: 0
+  m_Name: Hear Visualisation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4000010888426108
 Transform:
   m_ObjectHideFlags: 1
@@ -97,23 +98,23 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: -39.820004, z: 0}
   m_Children:
   - {fileID: 4000011986663590}
-  - {fileID: 4000010976079034}
   - {fileID: 4000013170947248}
+  - {fileID: 4000011209395034}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &4000010976079034
+--- !u!4 &4000011209395034
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010883943618}
+  m_GameObject: {fileID: 1000014245150198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01, z: 0}
-  m_LocalScale: {x: 1, y: 0.0001, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010888426108}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &4000011986663590
 Transform:
   m_ObjectHideFlags: 1
@@ -134,32 +135,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012281162350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010888426108}
-  m_RootOrder: 2
---- !u!23 &23000010129964922
+  m_RootOrder: 1
+--- !u!23 &23000010027087132
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010883943618}
+  m_GameObject: {fileID: 1000014245150198}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: af9579ff69fc1ac4ebc18945f7ba86ab, type: 2}
+  - {fileID: 2100000, guid: 79567020acc5a2d49a019e2d5bf00b45, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_SelectedWireframeHidden: 0
@@ -182,7 +183,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7ebb98fa9151d59429b876ffcddf762c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -234,13 +235,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010816782686}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33000013332737210
+--- !u!33 &33000012405935796
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010883943618}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_GameObject: {fileID: 1000014245150198}
+  m_Mesh: {fileID: 0}
 --- !u!33 &33000013664288502
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -290,6 +291,29 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   scoreValue: 10
+--- !u!114 &114000011493733672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012165846286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43eab06f4781272499c4b9b2506315b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearingRadius: 12.76
+  playerAndFollowerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  heardTargets: []
+  meshResolution: 0.5
+  edgeResolveIterations: 5
+  edgeDstThreshold: 0.12
+  hearingMeshFilter: {fileID: 33000012405935796}
 --- !u!114 &114000012985023628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,7 +326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hearingRange: 1
-  hearingRangeCircle: {fileID: 1000010883943618}
   viewDistance: 1
   viewAngle: 30
 --- !u!114 &114000013102779252
@@ -316,8 +339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3cbad5f2b548404db2c37f838046408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 11.28
-  viewAngle: 81
+  viewRadius: 11.21
+  viewAngle: 50
   playerAndFollowerLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -326,6 +349,8 @@ MonoBehaviour:
     m_Bits: 1024
   visibleTargets: []
   meshResolution: 0.59
+  edgeResolveIterations: 5
+  edgeDstThreshold: 0.28
   viewMeshFilter: {fileID: 33000013664288502}
 --- !u!135 &135000010352258646
 SphereCollider:

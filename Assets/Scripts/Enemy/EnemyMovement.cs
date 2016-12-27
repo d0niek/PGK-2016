@@ -4,7 +4,6 @@ using System.Collections;
 public class EnemyMovement : MonoBehaviour
 {
 	public float hearingRange = 5.0f;
-	public GameObject hearingRangeCircle;
 	public float viewDistance = 10.0f;
 	public float viewAngle = 30.0f;
 
@@ -19,7 +18,6 @@ public class EnemyMovement : MonoBehaviour
 		playerHealth = player.GetComponent <PlayerHealth> ();
 		navMeshAgent = GetComponent<NavMeshAgent> ();
 		startPosition = transform.position;
-		hearingRangeCircle.transform.localScale = new Vector3 (2 * hearingRange, 0.0001f, 2 * hearingRange);
 	}
 
 	void Update ()
