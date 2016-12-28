@@ -15,10 +15,10 @@ public class AreaOfHearingEditor : Editor {
 		Handles.DrawLine (aoh.transform.position, aoh.transform.position + viewAngleA * aoh.hearingRadius);
 		Handles.DrawLine (aoh.transform.position, aoh.transform.position + viewAngleB * aoh.hearingRadius);
 
-		Handles.color = Color.red;
-		foreach (Transform visibleTarget in aoh.heardTargets) {
-			Debug.Log (visibleTarget.position);
-			Handles.DrawLine (aoh.transform.position, visibleTarget.position);
-		}
+//		Handles.color = Color.red;
+//		foreach (Transform visibleTarget in aoh.heardTargets) {
+//			Debug.Log (visibleTarget.position);
+//			Handles.DrawLine (aoh.transform.position, visibleTarget.position);
+//		}
 	}
 }

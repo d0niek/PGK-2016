@@ -3,51 +3,27 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
-	public float hearingRange = 5.0f;
-	public float viewDistance = 10.0f;
-	public float viewAngle = 30.0f;
-
-	GameObject player;
-	PlayerHealth playerHealth;
+	FieldOfView fow;
+	AreaOfHearing aoh;
 	NavMeshAgent navMeshAgent;
 	Vector3 startPosition;
 
 	void Start ()
 	{
-		player = GameObject.FindGameObjectWithTag ("Player");
-		playerHealth = player.GetComponent <PlayerHealth> ();
+		fow = GetComponent <FieldOfView> ();
+		aoh = GetComponent<AreaOfHearing> ();
 		navMeshAgent = GetComponent<NavMeshAgent> ();
 		startPosition = transform.position;
 	}
 
 	void Update ()
 	{
-		if ((InHearingRange () || InViewRange ()) && playerHealth.currentHealth > 0) {
-			navMeshAgent.SetDestination (player.transform.position);
+		if (fow.targetInFieldOfView != null) {
+			navMeshAgent.SetDestination (fow.targetInFieldOfView.position);
+		} else if (aoh.targetInAreaOfHearing != null) {
+			navMeshAgent.SetDestination (aoh.targetInAreaOfHearing.position);
 		} else if (startPosition != transform.position) {
 			navMeshAgent.SetDestination (startPosition);
 		}
-	}
-
-	bool InHearingRange ()
-	{
-		float distance = Vector3.Distance (transform.position, player.transform.position);
-		distance = Mathf.Abs (distance);
-
-		return distance <= hearingRange;
-	}
-
-	bool InViewRange()
-	{
-		RaycastHit hit;
-		Vector3 rayDirection = (player.transform.position - transform.position).normalized;
-
-		if (Vector3.Angle (transform.forward, rayDirection) < viewAngle / 2) {
-			if (Physics.Raycast (transform.position + transform.forward, rayDirection, out hit, viewDistance)) {
-				return hit.transform.tag == "Player";
-			}
-		}
-
-		return false;
 	}
 }

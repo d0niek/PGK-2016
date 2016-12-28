@@ -302,17 +302,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43eab06f4781272499c4b9b2506315b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearingRadius: 12.76
+  hearingRadius: 10
   playerAndFollowerLayer:
     serializedVersion: 2
     m_Bits: 512
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1024
-  heardTargets: []
-  meshResolution: 0.5
+  targetInAreaOfHearing: {fileID: 0}
+  meshResolution: 1
   edgeResolveIterations: 5
-  edgeDstThreshold: 0.12
+  edgeDstThreshold: 0.5
   hearingMeshFilter: {fileID: 33000012405935796}
 --- !u!114 &114000012985023628
 MonoBehaviour:
@@ -325,9 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d566a4ac99d13c4fabc40c7d3ed4f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearingRange: 1
-  viewDistance: 1
-  viewAngle: 30
 --- !u!114 &114000013102779252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -339,18 +336,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3cbad5f2b548404db2c37f838046408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 11.21
-  viewAngle: 50
+  viewRadius: 12
+  viewAngle: 45
   playerAndFollowerLayer:
     serializedVersion: 2
     m_Bits: 512
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1024
-  visibleTargets: []
-  meshResolution: 0.59
+  targetInFieldOfView: {fileID: 0}
+  meshResolution: 1
   edgeResolveIterations: 5
-  edgeDstThreshold: 0.28
+  edgeDstThreshold: 0.5
   viewMeshFilter: {fileID: 33000013664288502}
 --- !u!135 &135000010352258646
 SphereCollider:

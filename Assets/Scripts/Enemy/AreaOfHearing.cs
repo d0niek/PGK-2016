@@ -2,15 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class AreaOfHearing : MonoBehaviour {
-
+public class AreaOfHearing : MonoBehaviour
+{
 	public float hearingRadius;
 
 	public LayerMask playerAndFollowerLayer;
 	public LayerMask obstacleLayer;
 
 	[HideInInspector]
-	public List<Transform> heardTargets = new List<Transform> ();
+	public Transform targetInAreaOfHearing;
 
 	public float meshResolution;
 	public int edgeResolveIterations;
@@ -19,7 +19,8 @@ public class AreaOfHearing : MonoBehaviour {
 	public MeshFilter hearingMeshFilter;
 	Mesh hearingMesh;
 
-	void Start() {
+	void Start()
+	{
 		hearingMesh = new Mesh ();
 		hearingMesh.name = "Hearing mesh";
 		hearingMeshFilter.mesh = hearingMesh;
@@ -27,19 +28,21 @@ public class AreaOfHearing : MonoBehaviour {
 		StartCoroutine ("FindTargetsWithDelay", 0.2f);
 	}
 
-	IEnumerator FindTargetsWithDelay(float delay) {
+	IEnumerator FindTargetsWithDelay(float delay)
+	{
 		while (true) {
 			yield return new WaitForSeconds (delay);
 			FindPlayerOrFollower ();
 		}
 	}
 
-	void LateUpdate() {
+	void LateUpdate()
+	{
 		DrawAreaOfHearing ();
 	}
 
-	void FindPlayerOrFollower() {
-		heardTargets.Clear ();
+	void FindPlayerOrFollower()
+	{
 		Collider[] targetsInHearingRadius = Physics.OverlapSphere (transform.position, hearingRadius, playerAndFollowerLayer);
 
 		for (int i = 0; i < targetsInHearingRadius.Length; i++) {
@@ -49,13 +52,17 @@ public class AreaOfHearing : MonoBehaviour {
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
 
 				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleLayer)) {
-					heardTargets.Add (target);
+					targetInAreaOfHearing = target;
+					return;
 				}
+
+				targetInAreaOfHearing = null;
 			}
 		}
 	}
 
-	void DrawAreaOfHearing() {
+	void DrawAreaOfHearing()
+	{
 		int stepCount = Mathf.RoundToInt(360 * meshResolution);
 		float setpAngleSize = 360 / stepCount;
 		List<Vector3> hearingPoints = new List<Vector3> ();
@@ -103,7 +110,8 @@ public class AreaOfHearing : MonoBehaviour {
 		hearingMesh.RecalculateNormals ();
 	}
 
-	EdgeInfo FindEdge(HearingCastInfo minHearingCast, HearingCastInfo maxHearingCast) {
+	EdgeInfo FindEdge(HearingCastInfo minHearingCast, HearingCastInfo maxHearingCast)
+	{
 		float minAngle = minHearingCast.angle;
 		float maxAngle = maxHearingCast.angle;
 		Vector3 minPoint = Vector3.zero;
@@ -126,7 +134,8 @@ public class AreaOfHearing : MonoBehaviour {
 		return new EdgeInfo (minPoint, maxPoint);
 	}
 
-	HearingCastInfo HearingCast(float globalAngle) {
+	HearingCastInfo HearingCast(float globalAngle)
+	{
 		Vector3 dir = DirFromAngle(globalAngle, true);
 		RaycastHit hit;
 
@@ -137,7 +146,8 @@ public class AreaOfHearing : MonoBehaviour {
 		return new HearingCastInfo(false, transform.position + dir * hearingRadius, hearingRadius, globalAngle);
 	}
 
-	public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal) {
+	public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
+	{
 		if (angleIsGlobal == false) {
 			angleInDegrees += transform.eulerAngles.y;
 		}
@@ -145,13 +155,15 @@ public class AreaOfHearing : MonoBehaviour {
 		return new Vector3 (Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
 	}
 
-	public struct HearingCastInfo {
+	public struct HearingCastInfo
+	{
 		public bool hit;
 		public Vector3 point;
 		public float dst;
 		public float angle;
 
-		public HearingCastInfo(bool hit, Vector3 point, float dst, float angle) {
+		public HearingCastInfo(bool hit, Vector3 point, float dst, float angle)
+		{
 			this.hit = hit;
 			this.point = point;
 			this.dst = dst;
@@ -159,11 +171,13 @@ public class AreaOfHearing : MonoBehaviour {
 		}
 	}
 
-	public struct EdgeInfo {
+	public struct EdgeInfo
+	{
 		public Vector3 pointA;
 		public Vector3 pointB;
 
-		public EdgeInfo(Vector3 pointA, Vector3 pointB) {
+		public EdgeInfo(Vector3 pointA, Vector3 pointB)
+		{
 			this.pointA = pointA;
 			this.pointB = pointB;
 		}
