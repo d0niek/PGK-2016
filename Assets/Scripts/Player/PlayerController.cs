@@ -16,12 +16,13 @@ public class PlayerController : MonoBehaviour
 
 	void OnTriggerEnter (Collider other)
 	{
-		if (other.gameObject.CompareTag ("Money")) {
+		if (other.gameObject.CompareTag ("Money"))
+        {
 			other.gameObject.SetActive (false);
 			goldCount++;
 			SetGoldCountText ();
 		}
-	}
+    }
 
 	void SetGoldCountText ()
 	{

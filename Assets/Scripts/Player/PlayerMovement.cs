@@ -11,9 +11,11 @@ public class PlayerMovement : MonoBehaviour
 	private CharacterController cc;
 	private float cameraRayLength = 100;
 	private int floorMask;
+    Animator anim;
 
 	void Awake ()
 	{
+        anim = GetComponentInChildren<Animator>();
 		floorMask = LayerMask.GetMask ("Floor");
 		cc = GetComponent<CharacterController> ();
 	}
@@ -23,7 +25,16 @@ public class PlayerMovement : MonoBehaviour
 		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
 		float moveVertical = Input.GetAxisRaw ("Vertical");
 
-		Move (moveHorizontal, moveVertical);
+        if (moveHorizontal != 0 || moveVertical != 0)
+        {
+            anim.SetBool("isRun", true);
+        }
+        else
+        {
+            anim.SetBool("isRun", false);
+        }
+
+        Move (moveHorizontal, moveVertical);
 		Turning ();
 	}
 
