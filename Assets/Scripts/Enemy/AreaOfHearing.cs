@@ -55,10 +55,10 @@ public class AreaOfHearing : MonoBehaviour
 					targetInAreaOfHearing = target;
 					return;
 				}
-
-				targetInAreaOfHearing = null;
 			}
 		}
+
+		targetInAreaOfHearing = null;
 	}
 
 	void DrawAreaOfHearing()

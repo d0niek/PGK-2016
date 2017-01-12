@@ -57,10 +57,10 @@ public class FieldOfView : MonoBehaviour
 					targetInFieldOfView = target;
 					return;
 				}
-
-				targetInFieldOfView = null;
 			}
 		}
+
+		targetInFieldOfView = null;
 	}
 
 	void DrawFieldOfView()
