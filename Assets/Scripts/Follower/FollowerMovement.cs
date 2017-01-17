@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class FollowerMovement : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class FollowerMovement : MonoBehaviour
     ParticleSystem exp;
     Vector3 vec;
     Renderer[] childrenRenderer;
+	Dictionary<string, GameObject> enemies;
 
     void Start ()
     {
@@ -17,6 +19,7 @@ public class FollowerMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag ("Player").transform;
         nav = GetComponent<NavMeshAgent> ();
         exp = GetComponentInChildren<ParticleSystem>();
+		enemies = new Dictionary<string, GameObject> ();
     }
 
     void FixedUpdate()
@@ -26,8 +29,7 @@ public class FollowerMovement : MonoBehaviour
 	
 	void Update ()
     {
-        if(!shouldStop)
-        {
+        if(!shouldStop) {
             followPlayer();
         }
 
@@ -37,9 +39,33 @@ public class FollowerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
             shouldStop = false;
 
-        if (Input.GetKeyDown(KeyCode.G))
-            StartCoroutine(appearAgain());
+		if (Input.GetKeyDown (KeyCode.G)) {
+			StunEnemies ();
+			StartCoroutine (appearAgain ());
+		}
     }
+
+	void StunEnemies()
+	{
+		foreach(GameObject enemy in enemies.Values) {
+			EnemyMovement em = enemy.GetComponent<EnemyMovement> ();
+			em.Stun ();
+		}
+	}
+
+	void OnTriggerEnter (Collider other)
+	{
+		if (other.gameObject.CompareTag("Enemy") && enemies.ContainsKey(other.gameObject.name) == false) {
+			enemies.Add (other.gameObject.name, other.gameObject);
+		}
+	}
+
+	void OnTriggerExit (Collider other)
+	{
+		if (other.gameObject.CompareTag("Enemy")) {
+			enemies.Remove (other.gameObject.name);
+		}
+	}
 
     IEnumerator appearAgain()
     {

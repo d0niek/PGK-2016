@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
-	public float stunnedTime = 3f;
+	public float stunnedTime = 5f;
 
 	FieldOfView fow;
 	AreaOfHearing aoh;
@@ -26,7 +26,7 @@ public class EnemyMovement : MonoBehaviour
 	{
 		timer += Time.deltaTime;
 
-		if (isStunned && timer < stunnedTime) {
+		if (isStunned == true && timer < stunnedTime) {
 			return;
 		}
 
