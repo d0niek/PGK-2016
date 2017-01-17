@@ -92,8 +92,7 @@ public class FollowerMovement : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
-        {
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
             nav.stoppingDistance = 1;
             nav.SetDestination(hit.point);
         }
