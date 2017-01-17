@@ -17,13 +17,13 @@ public class PlateController2 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Coworker"))
+		if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Follower"))
             wall.GetComponent<wallController>().isPlateTwoPressed = true;
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Coworker"))
+		if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Follower"))
             wall.GetComponent<wallController>().isPlateTwoPressed = false;
     }
 }
