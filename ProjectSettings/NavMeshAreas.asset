@@ -41,7 +41,7 @@ NavMeshAreas:
     cost: 1
   - name: 
     cost: 1
-  - name: 
+  - name: Air
     cost: 1
   - name: 
     cost: 1
