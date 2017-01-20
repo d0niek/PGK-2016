@@ -4454,6 +4454,7 @@ GameObject:
   - 135: {fileID: 547622069}
   - 23: {fileID: 547622068}
   - 114: {fileID: 547622067}
+  - 114: {fileID: 547622071}
   m_Layer: 0
   m_Name: Sphere (5)
   m_TagString: Untagged
@@ -4535,6 +4536,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 547622065}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &547622071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 547622065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fba5cf42b27fe4d954d9fc4a121147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.1
+  attackDamage: 100
 --- !u!1001 &561700432
 Prefab:
   m_ObjectHideFlags: 0
@@ -4911,6 +4925,7 @@ GameObject:
   - 135: {fileID: 623751444}
   - 23: {fileID: 623751443}
   - 114: {fileID: 623751442}
+  - 114: {fileID: 623751446}
   m_Layer: 0
   m_Name: Sphere (9)
   m_TagString: Untagged
@@ -4992,6 +5007,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 623751440}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &623751446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 623751440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fba5cf42b27fe4d954d9fc4a121147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.1
+  attackDamage: 100
 --- !u!1001 &625642920
 Prefab:
   m_ObjectHideFlags: 0
@@ -5343,6 +5371,7 @@ GameObject:
   - 135: {fileID: 669670745}
   - 23: {fileID: 669670744}
   - 114: {fileID: 669670743}
+  - 114: {fileID: 669670747}
   m_Layer: 0
   m_Name: Sphere (11)
   m_TagString: Untagged
@@ -5424,6 +5453,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 669670741}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &669670747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 669670741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fba5cf42b27fe4d954d9fc4a121147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.1
+  attackDamage: 100
 --- !u!1 &677121510
 GameObject:
   m_ObjectHideFlags: 0
@@ -5436,6 +5478,7 @@ GameObject:
   - 135: {fileID: 677121514}
   - 23: {fileID: 677121513}
   - 114: {fileID: 677121512}
+  - 114: {fileID: 677121516}
   m_Layer: 0
   m_Name: Sphere (4)
   m_TagString: Untagged
@@ -5517,6 +5560,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 677121510}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &677121516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 677121510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fba5cf42b27fe4d954d9fc4a121147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.1
+  attackDamage: 100
 --- !u!1 &677160507 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 124316, guid: 32f9e7f1053b38c41b83321d0efbe230, type: 2}
@@ -6784,7 +6840,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010570670758, guid: c395f132a63cb3d4da28319f160074b9, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 483.4
+      value: 660.7
       objectReference: {fileID: 0}
     - target: {fileID: 4000010570670758, guid: c395f132a63cb3d4da28319f160074b9, type: 2}
       propertyPath: m_LocalScale.x
@@ -7253,6 +7309,7 @@ GameObject:
   - 135: {fileID: 866924641}
   - 23: {fileID: 866924640}
   - 114: {fileID: 866924639}
+  - 114: {fileID: 866924643}
   m_Layer: 0
   m_Name: Sphere (7)
   m_TagString: Untagged
@@ -7334,6 +7391,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 866924637}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &866924643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 866924637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fba5cf42b27fe4d954d9fc4a121147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.1
+  attackDamage: 100
 --- !u!1001 &867039323
 Prefab:
   m_ObjectHideFlags: 0
@@ -7515,7 +7585,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013727940150, guid: d1490ec3dd325ac4aa97e78610b00e7f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 486.4
+      value: 663.7
       objectReference: {fileID: 0}
     - target: {fileID: 4000013727940150, guid: d1490ec3dd325ac4aa97e78610b00e7f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -8568,7 +8638,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1127733522}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 68.57, y: 46.31, z: 473.4}
+  m_LocalPosition: {x: 68.57, y: 46.31, z: 650.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_Children: []
@@ -9178,6 +9248,7 @@ GameObject:
   - 135: {fileID: 1180288314}
   - 23: {fileID: 1180288313}
   - 114: {fileID: 1180288312}
+  - 114: {fileID: 1180288316}
   m_Layer: 0
   m_Name: Sphere (8)
   m_TagString: Untagged
@@ -9259,6 +9330,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1180288310}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1180288316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1180288310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fba5cf42b27fe4d954d9fc4a121147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.1
+  attackDamage: 100
 --- !u!1 &1181315930 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 189588, guid: 2f1d35023a410684195ebaff92d15273, type: 2}
@@ -12007,6 +12091,7 @@ GameObject:
   - 135: {fileID: 1654076728}
   - 23: {fileID: 1654076727}
   - 114: {fileID: 1654076726}
+  - 114: {fileID: 1654076730}
   m_Layer: 0
   m_Name: Sphere (10)
   m_TagString: Untagged
@@ -12088,6 +12173,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1654076724}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1654076730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1654076724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fba5cf42b27fe4d954d9fc4a121147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.1
+  attackDamage: 100
 --- !u!1001 &1656256462
 Prefab:
   m_ObjectHideFlags: 0
@@ -13046,6 +13144,7 @@ GameObject:
   - 135: {fileID: 1758037389}
   - 23: {fileID: 1758037388}
   - 114: {fileID: 1758037387}
+  - 114: {fileID: 1758037391}
   m_Layer: 0
   m_Name: Sphere (6)
   m_TagString: Untagged
@@ -13127,6 +13226,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1758037385}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1758037391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1758037385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82fba5cf42b27fe4d954d9fc4a121147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.1
+  attackDamage: 100
 --- !u!1001 &1762193519
 Prefab:
   m_ObjectHideFlags: 0
