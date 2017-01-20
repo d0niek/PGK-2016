@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class hiddenWallController : MonoBehaviour
+public class RightHiddenWallController : MonoBehaviour
 {
-
     Vector3 target;
-    public bool isPlateThreePressed;
-    public bool isPlateFourPressed;
-    
+    public bool isPlate1Pressed;
+    public bool isPlate2Pressed;
+
 
     void Start()
     {
-        target = new Vector3(transform.position.x - 20, transform.position.y, transform.position.z);
+        target = new Vector3(transform.position.x + 20, transform.position.y, transform.position.z);
     }
     void Update()
     {
@@ -20,7 +19,7 @@ public class hiddenWallController : MonoBehaviour
 
         if (accessor.keyCount == 4)
         {
-            if (isPlateThreePressed && isPlateFourPressed)
+            if (isPlate1Pressed && isPlate2Pressed)
             {
                 transform.position = Vector3.MoveTowards(transform.position, target, 0.1f);
             }
