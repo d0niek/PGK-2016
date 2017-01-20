@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public Text keysCountText;
 
 	private int goldCount;
-    private int keyCount;
+    public int keyCount { get; private set; }
 
 
 	void Awake ()

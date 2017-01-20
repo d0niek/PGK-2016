@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlateController1 : MonoBehaviour {
+public class PlateController1 : MonoBehaviour
+{
 
     public GameObject wall;
 	void Start () {
