@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
 	public Text goldCountText;
     public Text keysCountText;
+    public AudioClip[] audioClip;
 
-	private int goldCount;
+    private int goldCount;
     public int keyCount { get; private set; }
+//    Text T = GameObject.Find("GatheredKeys").GetComponent<Text>();
 
 
-	void Awake ()
-	{
+    void Awake ()
+    { 
 		goldCount = 0;
         keyCount = 0;
 		SetGoldCountText ();
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         {
 			other.gameObject.SetActive (false);
 			goldCount++;
+            PlayerSounds(0);
 			SetGoldCountText ();
 		}
 
@@ -32,7 +34,15 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             keyCount++;
+            PlayerSounds(1);
             SetKeysCountText();
+            
+            
+            if (keyCount == 4)
+            {
+  //              T.enabled = true;
+                PlayerSounds(2);
+            }
         }
     }
 
@@ -44,5 +54,11 @@ public class PlayerController : MonoBehaviour
     void SetKeysCountText()
     {
         keysCountText.text = "Keys: " + keyCount.ToString();
+    }
+
+    public void PlayerSounds(int clip)
+    {
+        GetComponent<AudioSource>().clip = audioClip[clip];
+        GetComponent<AudioSource>().Play();
     }
 }

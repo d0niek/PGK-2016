@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692558, g: 0.49678743, b: 0.57508624, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692492, g: 0.4967869, b: 0.57508546, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -232,22 +232,22 @@ Prefab:
     - target: {fileID: 224000011845243602, guid: 3090c735b41c847489b99965824add33,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 652.5
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 224000011845243602, guid: 3090c735b41c847489b99965824add33,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -279.83334
+      value: -276.33334
       objectReference: {fileID: 0}
     - target: {fileID: 224000011845243602, guid: 3090c735b41c847489b99965824add33,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 505
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000011845243602, guid: 3090c735b41c847489b99965824add33,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 59.666668
+      value: 52.666668
       objectReference: {fileID: 0}
     - target: {fileID: 224000011845243602, guid: 3090c735b41c847489b99965824add33,
         type: 2}
@@ -532,7 +532,7 @@ GameObject:
   - 114: {fileID: 1154679189}
   - 114: {fileID: 1154679188}
   m_Layer: 5
-  m_Name: OptionsButton
+  m_Name: TutorialButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1154679186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6eefdb3a209ec04d9a6e759257a4421, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cdae3a2f5dc58e4bad09e8ed799e475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1154679189
@@ -602,11 +602,22 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1154679190}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1154679188}
+        m_MethodName: OpenTutorialInMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1154679190
@@ -878,7 +889,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Options
+  m_Text: Tutorial
 --- !u!222 &1364152208
 CanvasRenderer:
   m_ObjectHideFlags: 0

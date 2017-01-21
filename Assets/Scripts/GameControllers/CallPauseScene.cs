@@ -17,4 +17,9 @@ public class CallPauseScene : MonoBehaviour {
             SceneManager.LoadScene("PauseGame", LoadSceneMode.Additive);
         }
 	}
+
+    public void OnClickCallPauseScene()
+    {
+        SceneManager.LoadScene("PauseGame");
+    }
 }
