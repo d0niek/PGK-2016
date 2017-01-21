@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scene/Death.unity
   - enabled: 1
     path: Assets/Scene/PauseGame.unity
+  - enabled: 1
+    path: Assets/Scene/EndGame.unity

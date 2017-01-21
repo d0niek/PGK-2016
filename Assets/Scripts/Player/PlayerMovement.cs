@@ -12,8 +12,9 @@ public class PlayerMovement : MonoBehaviour
 	private float cameraRayLength = 100;
 	private int floorMask;
     Animator anim;
+    public AudioClip[] audioClip;
 
-	void Awake ()
+    void Awake ()
 	{
         anim = GetComponentInChildren<Animator>();
 		floorMask = LayerMask.GetMask ("Floor");
@@ -44,9 +45,11 @@ public class PlayerMovement : MonoBehaviour
 			moveDirection = new Vector3 (horizontal, 0, vertical);
 			moveDirection = transform.TransformDirection (moveDirection);
 			moveDirection *= speed;
+            
 
 			if (Input.GetButton ("Jump")) {
 				moveDirection.y = jumpSpeed;
+                PlayerSounds(0);
 			}
 		}
 
@@ -67,4 +70,10 @@ public class PlayerMovement : MonoBehaviour
 			transform.rotation = newRotation;
 		}
 	}
+
+    public void PlayerSounds(int clip)
+    {
+        GetComponent<AudioSource>().clip = audioClip[clip];
+        GetComponent<AudioSource>().Play();
+    }
 }

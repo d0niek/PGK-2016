@@ -11,6 +11,7 @@ public class FollowerMovement : MonoBehaviour
     Vector3 vec;
     Renderer[] childrenRenderer;
 	Dictionary<string, GameObject> enemies;
+    public AudioClip[] audioClip;
 
     void Start ()
     {
@@ -42,6 +43,7 @@ public class FollowerMovement : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.G)) {
 			StunEnemies ();
 			StartCoroutine (appearAgain ());
+            explosionSound(0);
 		}
     }
 
@@ -98,5 +100,11 @@ public class FollowerMovement : MonoBehaviour
         }
 
         shouldStop = true;
+    }
+
+    public void explosionSound(int clip)
+    {
+        GetComponent<AudioSource>().clip = audioClip[clip];
+        GetComponent<AudioSource>().Play();
     }
 }

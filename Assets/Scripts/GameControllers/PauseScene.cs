@@ -17,6 +17,5 @@ public class PauseScene : MonoBehaviour {
     {
         Time.timeScale = 1;
         Destroy(gameObject);
-        Debug.Log("DESTROYED");
     }
 }
