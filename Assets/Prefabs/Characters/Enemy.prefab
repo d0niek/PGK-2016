@@ -2103,7 +2103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
-  attackDamage: 10
+  attackDamage: 2
 --- !u!114 &114000011201275450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2152,7 +2152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d566a4ac99d13c4fabc40c7d3ed4f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunnedTime: 5
+  stunnedTime: 8
 --- !u!114 &114000013102779252
 MonoBehaviour:
   m_ObjectHideFlags: 1
