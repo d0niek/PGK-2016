@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692492, g: 0.4967869, b: 0.57508546, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692558, g: 0.49678743, b: 0.57508624, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -232,22 +232,22 @@ Prefab:
     - target: {fileID: 224000011845243602, guid: 3090c735b41c847489b99965824add33,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 400
+      value: 960
       objectReference: {fileID: 0}
     - target: {fileID: 224000011845243602, guid: 3090c735b41c847489b99965824add33,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -276.33334
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 224000011845243602, guid: 3090c735b41c847489b99965824add33,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 620
       objectReference: {fileID: 0}
     - target: {fileID: 224000011845243602, guid: 3090c735b41c847489b99965824add33,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 52.666668
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 224000011845243602, guid: 3090c735b41c847489b99965824add33,
         type: 2}
@@ -788,7 +788,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 3, y: 1}
-  m_SizeDelta: {x: 1400, y: 950}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1283210310
 MonoBehaviour:
@@ -809,7 +809,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 7289874a6ae81f64f958718719420c18, type: 3}
+  m_Texture: {fileID: 2800000, guid: 270471dbc5de8ca47bfd5f217c56e6ee, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -984,7 +984,7 @@ RectTransform:
   m_GameObject: {fileID: 1555924900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 529451495}
@@ -1019,10 +1019,10 @@ MonoBehaviour:
   m_Texture: {fileID: 2800000, guid: dd5119a35c666534899539a82070f5a1, type: 3}
   m_UVRect:
     serializedVersion: 2
-    x: 0
+    x: -0.5
     y: 0
-    width: 1
-    height: 1
+    width: 2
+    height: 1.09
 --- !u!222 &1555924903
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1041,11 +1041,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 400
-    m_Right: 400
-    m_Top: 250
-    m_Bottom: 150
-  m_ChildAlignment: 0
+    m_Left: 650
+    m_Right: 650
+    m_Top: 400
+    m_Bottom: 250
+  m_ChildAlignment: 1
   m_Spacing: 30
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -1155,7 +1155,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 662, y: -182}
+  m_AnchoredPosition: {x: 970, y: -310}
   m_SizeDelta: {x: 1000, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1741364937

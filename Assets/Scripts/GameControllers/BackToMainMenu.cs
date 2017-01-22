@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
-using UnityEditor;
-using UnityEditor.SceneManagement;
 
 public class BackToMainMenu : MonoBehaviour {
 
