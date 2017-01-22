@@ -26,14 +26,7 @@ public class PlayerMovement : MonoBehaviour
 		float moveHorizontal = Input.GetAxisRaw ("Horizontal");
 		float moveVertical = Input.GetAxisRaw ("Vertical");
 
-        if (moveHorizontal != 0 || moveVertical != 0)
-        {
-            anim.SetBool("isRun", true);
-        }
-        else
-        {
-            anim.SetBool("isRun", false);
-        }
+		anim.SetBool("isRun", moveHorizontal != 0 || moveVertical != 0);
 
         Move (moveHorizontal, moveVertical);
 		Turning ();
