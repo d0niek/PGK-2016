@@ -18,7 +18,7 @@ public class hiddenWallController : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         PlayerController accessor = player.GetComponent<PlayerController>();
 
-        if (accessor.keyCount == 4)
+        if (accessor.keyCount == accessor.keyAmount)
         {
             if (isPlateThreePressed && isPlateFourPressed)
             {

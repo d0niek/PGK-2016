@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyAttack : MonoBehaviour
 {
 	public float timeBetweenAttacks = 0.5f;
-	public int attackDamage = 10;
+	public int attackDamage = 25;
 
 	GameObject player;
 	PlayerHealth playerHealth;

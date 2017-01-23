@@ -12,6 +12,7 @@ TagManager:
   - Plate
   - BurstButton
   - TargetIndicator
+  - PlatformTarget
   layers:
   - Default
   - TransparentFX

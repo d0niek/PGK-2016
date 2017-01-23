@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip[] audioClip;
 
     private int goldCount;
+    public int keyAmount;
     public int keyCount { get; private set; }
 //    Text T = GameObject.Find("GatheredKeys").GetComponent<Text>();
 
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
             SetKeysCountText();
             
             
-            if (keyCount == 4)
+            if (keyCount == keyAmount)
             {
   //              T.enabled = true;
                 PlayerSounds(2);
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
 	}
     void SetKeysCountText()
     {
-        keysCountText.text = "Keys: " + keyCount.ToString();
+        keysCountText.text = "Keys: " + keyCount.ToString() + " /" + keyAmount.ToString() ;
     }
 
     public void PlayerSounds(int clip)
