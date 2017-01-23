@@ -1136,7 +1136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012165846286}
   m_LocalRotation: {x: -0, y: -0.3384383, z: -0, w: 0.9409886}
-  m_LocalPosition: {x: 28.2, y: -107.03607, z: 191.1}
+  m_LocalPosition: {x: -16.36, y: 0, z: -12.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: -39.820004, z: 0}
   m_Children:
@@ -2152,7 +2152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d566a4ac99d13c4fabc40c7d3ed4f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunnedTime: 8
+  stunnedTime: 5
 --- !u!114 &114000013102779252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2201,7 +2201,7 @@ CapsuleCollider:
   m_Radius: 0.75
   m_Height: 3.3
   m_Direction: 1
-  m_Center: {x: 0, y: 1.6, z: 0}
+  m_Center: {x: 0, y: 1.7, z: 0}
 --- !u!137 &137000010728430592
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

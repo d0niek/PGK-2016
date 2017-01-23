@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
 	float timer;
 	Animator anim;
 
-	void Start ()
+	void Awake ()
 	{
 		fow = GetComponent <FieldOfView> ();
 		aoh = GetComponent<AreaOfHearing> ();
@@ -42,7 +42,7 @@ public class EnemyMovement : MonoBehaviour
 		} else if (aoh.targetInAreaOfHearing != null && targetInAttackRange == false && isStunned == false) {
 			navMeshAgent.SetDestination (aoh.targetInAreaOfHearing.position);
 			isRunning = true;
-		} else if (startPosition != transform.position && targetInAttackRange == false && isStunned == false) {
+		} else if (Vector3.SqrMagnitude(startPosition - transform.position) > 0.01 && targetInAttackRange == false && isStunned == false) {
 			navMeshAgent.SetDestination (startPosition);
 			isRunning = true;
 		}
