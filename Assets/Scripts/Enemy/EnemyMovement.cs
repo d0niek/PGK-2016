@@ -8,10 +8,14 @@ public class EnemyMovement : MonoBehaviour
 	FieldOfView fow;
 	AreaOfHearing aoh;
 	NavMeshAgent navMeshAgent;
-	Vector3 startPosition;
+	Vector3 positionA;
+	Vector3 positionB;
+	bool isOnPositionA;
+	bool isOnPositionB;
 	bool targetInAttackRange;
 	bool isStunned;
 	bool isRunning;
+	bool isWalking;
 	float timer;
 	Animator anim;
 
@@ -20,7 +24,10 @@ public class EnemyMovement : MonoBehaviour
 		fow = GetComponent <FieldOfView> ();
 		aoh = GetComponent<AreaOfHearing> ();
 		navMeshAgent = GetComponent<NavMeshAgent> ();
-		startPosition = transform.position;
+		positionA = transform.position;
+		positionB = transform.Find ("Patrol Point").position;
+		isOnPositionA = true;
+		isOnPositionB = false;
 		targetInAttackRange = false;
 		isStunned = false;
 		timer = 0f;
@@ -35,6 +42,7 @@ public class EnemyMovement : MonoBehaviour
 			isStunned = false;
 		}
 		isRunning = false;
+		isWalking = false;
 
 		if (fow.targetInFieldOfView != null && targetInAttackRange == false && isStunned == false) {
 			navMeshAgent.SetDestination (fow.targetInFieldOfView.position);
@@ -42,13 +50,36 @@ public class EnemyMovement : MonoBehaviour
 		} else if (aoh.targetInAreaOfHearing != null && targetInAttackRange == false && isStunned == false) {
 			navMeshAgent.SetDestination (aoh.targetInAreaOfHearing.position);
 			isRunning = true;
-		} else if (Vector3.SqrMagnitude(startPosition - transform.position) > 0.01 && targetInAttackRange == false && isStunned == false) {
-			navMeshAgent.SetDestination (startPosition);
-			isRunning = true;
+		} else {
+			Patrol ();
 		}
 
 		anim.SetBool ("IsStun", isStunned);
 		anim.SetBool ("IsRunning", isRunning);
+		anim.SetBool ("IsWalking", isWalking);
+	}
+
+	void Patrol()
+	{
+		if (positionA == positionB && Vector3.SqrMagnitude (positionA - transform.position) < 0.01) {
+			return;
+		}
+
+		if (Vector3.SqrMagnitude (positionB - transform.position) < 0.01) {
+			isOnPositionB = true;
+			isOnPositionA = false;
+		} else if (Vector3.SqrMagnitude (positionA - transform.position) < 0.01) {
+			isOnPositionA = true;
+			isOnPositionB = false;
+		}
+
+		if (Vector3.SqrMagnitude (positionB - transform.position) > 0.01 && isOnPositionA == true) {
+			navMeshAgent.SetDestination (positionB);
+			isWalking = true;
+		} else if (Vector3.SqrMagnitude (positionA - transform.position) > 0.01 && isOnPositionB == true) {
+			navMeshAgent.SetDestination (positionA);
+			isWalking = true;
+		}
 	}
 
 	void OnTriggerEnter (Collider other)
