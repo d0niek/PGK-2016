@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class FollowerMovement : MonoBehaviour
 {
@@ -10,64 +11,104 @@ public class FollowerMovement : MonoBehaviour
     ParticleSystem exp;
     Vector3 vec;
     Renderer[] childrenRenderer;
-	Dictionary<string, GameObject> enemies;
+    Dictionary<string, GameObject> enemies;
+    GameObject targetIndicator;
+    Image cooldownButton;
     public AudioClip[] audioClip;
+    private float timeStamp;
+    public float cooldownPeriod = 4.0f;
 
-    void Start ()
+    void Start()
     {
         childrenRenderer = gameObject.GetComponentsInChildren<MeshRenderer>();
         vec = new Vector3(0, 0, -3);
-        player = GameObject.FindGameObjectWithTag ("Player").transform;
-        nav = GetComponent<NavMeshAgent> ();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        cooldownButton = GameObject.FindGameObjectWithTag("BurstButton").GetComponent<Image>();
+        targetIndicator = GameObject.FindGameObjectWithTag("TargetIndicator");
+        nav = GetComponent<NavMeshAgent>();
         exp = GetComponentInChildren<ParticleSystem>();
-		enemies = new Dictionary<string, GameObject> ();
+        enemies = new Dictionary<string, GameObject>();
     }
 
     void FixedUpdate()
     {
-        GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * (GetComponent<Rigidbody>().mass * Mathf.Abs(Physics.gravity.y)));
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if (timeStamp <= Time.time)
+            {
+                timeStamp = Time.time + cooldownPeriod;
+                reloadSkill();
+                StunEnemies();
+                StartCoroutine(appearAgain());
+                explosionSound(0);                
+            }
+        }
     }
-	
-	void Update ()
+
+    void Update()
     {
-        if(!shouldStop) {
+        if (nav.remainingDistance < 1)
+            targetIndicator.SetActive(false);
+
+        if (!shouldStop)
+        {
             followPlayer();
         }
 
         if (Input.GetKeyDown(KeyCode.F))
+        {
+            targetIndicator.SetActive(true);
             GoTo();
+        }
 
         if (Input.GetKeyDown(KeyCode.B))
             shouldStop = false;
-
-		if (Input.GetKeyDown (KeyCode.G)) {
-			StunEnemies ();
-			StartCoroutine (appearAgain ());
-            explosionSound(0);
-		}
     }
 
-	void StunEnemies()
-	{
-		foreach(GameObject enemy in enemies.Values) {
-			EnemyMovement em = enemy.GetComponent<EnemyMovement> ();
-			em.Stun ();
-		}
-	}
+    void reloadSkill ()
+    {
+        cooldownButton.fillAmount = 0;
+        cooldownButton.color = new Color(255, 0, 0);
 
-	void OnTriggerEnter (Collider other)
-	{
-		if (other.gameObject.CompareTag("Enemy") && enemies.ContainsKey(other.gameObject.name) == false) {
-			enemies.Add (other.gameObject.name, other.gameObject);
-		}
-	}
+        StartCoroutine(startReloadingSkill());
+    }
 
-	void OnTriggerExit (Collider other)
-	{
-		if (other.gameObject.CompareTag("Enemy")) {
-			enemies.Remove (other.gameObject.name);
-		}
-	}
+    IEnumerator startReloadingSkill()
+    {
+        while (timeStamp >= Time.time)
+        {
+            cooldownButton.fillAmount += 0.025f;
+            yield return new WaitForSecondsRealtime(0.2f);
+            cooldownButton.fillAmount += 0.025f;
+        }
+        cooldownButton.fillAmount = 1;
+        cooldownButton.color = new Color(255, 255, 255);
+    }
+
+    void StunEnemies()
+    {
+        foreach (GameObject enemy in enemies.Values)
+        {
+            EnemyMovement em = enemy.GetComponent<EnemyMovement>();
+            em.Stun();
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy") && enemies.ContainsKey(other.gameObject.name) == false)
+        {
+            enemies.Add(other.gameObject.name, other.gameObject);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            enemies.Remove(other.gameObject.name);
+        }
+    }
 
     IEnumerator appearAgain()
     {
@@ -94,9 +135,12 @@ public class FollowerMovement : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+        {
             nav.stoppingDistance = 1;
             nav.SetDestination(hit.point);
+            var transform = targetIndicator.GetComponent<Transform>();
+            transform.position = hit.point;
         }
 
         shouldStop = true;

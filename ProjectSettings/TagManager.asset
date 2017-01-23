@@ -10,6 +10,8 @@ TagManager:
   - Enemy
   - Coworker
   - Plate
+  - BurstButton
+  - TargetIndicator
   layers:
   - Default
   - TransparentFX
