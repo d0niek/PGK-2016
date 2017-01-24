@@ -14,7 +14,7 @@ TagManager:
   - TargetIndicator
   - PlatformTarget
   - GatheredKeyText
-  - Jumper
+  - CityPlatformTarget
   layers:
   - Default
   - TransparentFX
