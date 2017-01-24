@@ -4649,7 +4649,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013727940150, guid: d1490ec3dd325ac4aa97e78610b00e7f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 27.5
+      value: 21.71
       objectReference: {fileID: 0}
     - target: {fileID: 4000013727940150, guid: d1490ec3dd325ac4aa97e78610b00e7f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4657,7 +4657,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013727940150, guid: d1490ec3dd325ac4aa97e78610b00e7f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.3
+      value: -60.55
       objectReference: {fileID: 0}
     - target: {fileID: 4000013727940150, guid: d1490ec3dd325ac4aa97e78610b00e7f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5262,7 +5262,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: -1722757887
+  randomSeed: -1602395879
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -13612,7 +13612,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1127733522}
   m_LocalRotation: {x: 0.36650118, y: 0, z: 0, w: 0.9304176}
-  m_LocalPosition: {x: 25.2, y: 48.3, z: -15.6}
+  m_LocalPosition: {x: 19.41, y: 48.3, z: -75.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 43, y: 0, z: 0}
   m_Children: []
@@ -22362,11 +22362,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010816305316, guid: a4f99ead75da61d428073b0805fd627d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -15.9
+      value: -18.77
       objectReference: {fileID: 0}
     - target: {fileID: 4000010816305316, guid: a4f99ead75da61d428073b0805fd627d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 7.9
+      value: 7.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4f99ead75da61d428073b0805fd627d, type: 2}
@@ -23028,7 +23028,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2080620721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.3}
+  m_LocalPosition: {x: 0, y: 0, z: -63.55}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -23037,7 +23037,7 @@ RectTransform:
   m_RootOrder: 10
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.6, y: 31.4}
+  m_AnchoredPosition: {x: 19.81, y: 31.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2090568056
