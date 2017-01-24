@@ -13,6 +13,8 @@ TagManager:
   - BurstButton
   - TargetIndicator
   - PlatformTarget
+  - GatheredKeyText
+  - Jumper
   layers:
   - Default
   - TransparentFX

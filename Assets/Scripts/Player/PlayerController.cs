@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -6,6 +7,7 @@ public class PlayerController : MonoBehaviour
 	public Text goldCountText;
     public Text keysCountText;
     public AudioClip[] audioClip;
+    public Text text;
 
     private int goldCount;
     public int keyAmount;
@@ -37,12 +39,12 @@ public class PlayerController : MonoBehaviour
             keyCount++;
             PlayerSounds(1);
             SetKeysCountText();
-            
+                        
             
             if (keyCount == keyAmount)
             {
-  //              T.enabled = true;
                 PlayerSounds(2);
+                keysCountText.color = Color.green;
             }
         }
     }
@@ -54,7 +56,7 @@ public class PlayerController : MonoBehaviour
 	}
     void SetKeysCountText()
     {
-        keysCountText.text = "Keys: " + keyCount.ToString() + " /" + keyAmount.ToString() ;
+        keysCountText.text = "Keys: " + keyCount.ToString() + "/" + keyAmount.ToString() ;
     }
 
     public void PlayerSounds(int clip)

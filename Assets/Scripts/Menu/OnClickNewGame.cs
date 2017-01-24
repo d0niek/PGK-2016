@@ -6,6 +6,6 @@ public class OnClickNewGame : MonoBehaviour {
 
     public void OpenMainLevel()
     {
-        SceneManager.LoadScene("Main_level");
+        SceneManager.LoadScene("Main_Level");
     }
 }
